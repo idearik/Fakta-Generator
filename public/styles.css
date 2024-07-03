@@ -16,8 +16,8 @@ body, html {
   background: #131842;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  max-width: 90%;
-  width: 800px; /* Fixed width for consistency */
+  max-width: 80%;
+  width: 600px; /* Fixed width for consistency */
 }
 
 h1 {
@@ -76,54 +76,12 @@ button:hover {
 /* Mobile styles */
 @media (max-width: 600px) {
   body, html {
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding-top: 20px;
     height: auto;
   }
-
-  .container {
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-    margin-top: 20px;
-  }
-
-  h1 {
-    font-size: 2rem; /* Maintain the desktop font size */
-    color:#f9f9f9;
-  }
-
-  .tahun-section, .fact-section {
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tahun-section {
-    background-color: #ECCEAE;
-    color: #131842;
-  }
-
-  .fact-section {
-    background-color: #FBF6E2;
-    color: #131842;
-  }
-
-  .tahun-section p, .fact-section p {
-    font-size: 1.5rem; /* Maintain the desktop font size */
-    width: 100%; /* Ensure text doesn't affect the container size */
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-  }
-
-  button {
-    width: auto; /* Maintain the button width */
-    font-size: 1rem; /* Maintain the desktop font size */
+  .container{
+    width: 80%;
   }
 }
