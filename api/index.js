@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
-// Decode the base64 encoded service account JSON
 let serviceAccount;
 try {
   serviceAccount = JSON.parse(base64.decode(process.env.GOOGLE_SERVICE_ACCOUNT));
