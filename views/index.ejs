@@ -1,26 +1,31 @@
+<!-- views/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Fact Generator</title>
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Fakta</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="fact-container">
-            <div class="year-section"><%= year %></div>
-            <div class="fact-section"><%= fact %></div>
-            <button onclick="getNewFact()">More Random Fact</button>
-        </div>
+  <div class="container">
+    <h1>Fakta Random</h1>
+    <div class="tahun-section">
+      <p id="year"><strong><%= year %></strong></p>
     </div>
-    <script>
-        async function getNewFact() {
-            const response = await fetch('/fact');
-            const data = await response.json();
-            document.querySelector('.year-section').textContent = data.year;
-            document.querySelector('.fact-section').textContent = data.fact;
-        }
-    </script>
+    <div class="fact-section">
+      <p id="fact"><%= fact %></p>
+    </div>
+    <button id="more-fact-btn">Fakta Lainnya</button>
+  </div>
+
+  <script>
+    document.getElementById('more-fact-btn').addEventListener('click', async () => {
+      const response = await fetch('/fact');
+      const data = await response.json();
+      document.getElementById('year').innerText = data.year;
+      document.getElementById('fact').innerText = data.fact;
+    });
+  </script>
 </body>
 </html>
