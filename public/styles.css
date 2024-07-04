@@ -36,25 +36,19 @@ h1 {
   color: #f9f9f9;
 }
 
-.fact-section {
+.tahun-section, .fact-section {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Fixed height for consistency */
+  min-height: 50px; /* Minimum height for consistency */
 }
 
 .tahun-section {
   background-color: #ECCEAE;
-  color: #131842;  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
+  color: #131842;
 }
 
 .fact-section {
@@ -109,14 +103,38 @@ button:hover {
     height: auto;
   }
 
+  .main-container {
+    width: 100%;
+    padding: 10px;
+  }
+
   .container {
-    width: 80%;
+    width: 100%;
     max-width: 100%;
+    padding: 15px;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .ad-container {
-    width: 80%;
+    width: 100%;
     max-width: 100%;
     margin-top: 20px;
+    padding: 10px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .tahun-section p, .fact-section p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
   }
 }
