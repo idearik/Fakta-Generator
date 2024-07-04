@@ -8,6 +8,15 @@ body, html {
   align-items: center;
   height: 100vh;
   background-color: #f9f9f9;
+  flex-direction: column; /* Ensure elements stack vertically */
+}
+
+.main-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -17,43 +26,51 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   max-width: 80%;
-  width: 600px; /* Fixed width for consistency */
+  width: 100%; /* Ensure full width */
+  margin-bottom: 20px;
 }
 
 h1 {
   margin-bottom: 20px;
   font-size: 2rem;
-  color:#f9f9f9;
+  color: #f9f9f9;
 }
 
-.tahun-section, .fact-section {
+.fact-section {
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px; /* Fixed height for consistency */
 }
 
 .tahun-section {
   background-color: #ECCEAE;
-  color: #131842;
+  color: #131842;  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 }
 
 .fact-section {
   background-color: #FBF6E2;
   color: #131842;
+  overflow: hidden; /* Hide overflow text */
 }
 
 .tahun-section p, .fact-section p {
   margin: 0;
   width: 100%; /* Ensure text doesn't affect the container size */
-  white-space: wrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflow text */
+  white-space: normal; /* Allow text wrapping */
   text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
-.tahun-section p{
+.tahun-section p {
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -73,15 +90,33 @@ button:hover {
   background-color: #bb563c;
 }
 
+.ad-container {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 80%;
+  width: 100%; /* Ensure full width */
+  text-align: center;
+}
+
 /* Mobile styles */
 @media (max-width: 600px) {
   body, html {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding-top: 20px;
     height: auto;
   }
-  .container{
+
+  .container {
     width: 80%;
+    max-width: 100%;
+  }
+
+  .ad-container {
+    width: 80%;
+    max-width: 100%;
+    margin-top: 20px;
   }
 }
