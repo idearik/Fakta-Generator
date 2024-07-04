@@ -1,3 +1,4 @@
+<!-- views/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,19 +19,26 @@
       </div>
       <button id="more-fact-btn">Fakta Lainnya</button>
     </div>
-    
     <div class="ad-container">
-      <!-- Replace this with your Google Ads code -->
-      <p>Ad Placeholder</p>
+      <!-- Add your Google Ads code here -->
+      <p>Ad content here</p>
     </div>
   </div>
 
   <script>
     document.getElementById('more-fact-btn').addEventListener('click', async () => {
+      const button = document.getElementById('more-fact-btn');
+      button.style.backgroundColor = '#bb563c'; // Change color on click
+
       const response = await fetch('/fact');
       const data = await response.json();
+
       document.getElementById('year').innerText = data.year;
       document.getElementById('fact').innerText = data.fact;
+
+      setTimeout(() => {
+        button.style.backgroundColor = '#E68369'; // Revert to original color
+      }, 300); // Delay to show the color change effect
     });
   </script>
 </body>
